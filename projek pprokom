@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 
 app = Tk()
+app.title('Aplikasi Kasir')
 app.geometry('750x600')  # membuat ukuran
 app.configure(bg='#31c6d4')  # membuat backgroung warna
 
