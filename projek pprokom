@@ -2,7 +2,6 @@ from tkinter import *
 from tkinter import messagebox
 
 app = Tk()
-app.title('Aplikasi Kasir')
 app.geometry('750x600')  # membuat ukuran
 app.configure(bg='#31c6d4')  # membuat backgroung warna
 
@@ -15,6 +14,46 @@ def login():
 
     if entered_id == "admin" and entered_pass == "dhaniganteng":
         messagebox.showinfo(message="User Benar")
+        app.destroy()
+        ws = Tk()
+        ws.geometry('400x300')
+        ws.title('PythonGuides')
+        ws['bg']='#31c6d4'
+
+        f = ("Times bold", 14)
+    
+        def nextPage():
+            ws.destroy()
+            import page2
+
+        def prevPage():
+            ws.destroy()
+            import page3
+    
+        Label(
+        ws,
+        text="Main Menu",
+        padx=20,
+        pady=20,
+        bg='#31c6d4',
+        font=f
+        ).pack(expand=True, fill=BOTH)
+
+        Button(
+        ws, 
+        text="Previous Page", 
+        font=f,
+        command=nextPage
+        ).pack(fill=X, expand=TRUE, side=LEFT)
+
+        Button(
+        ws, 
+        text="Next Page", 
+        font=f,
+        command=prevPage
+        ).pack(fill=X, expand=TRUE, side=LEFT)
+
+        ws.mainloop()
 
     else:
         messagebox.showerror(message="User Salah")
